@@ -9,76 +9,85 @@
 </head>
 <body>
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="./assets/logo/logo-no-background.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./assets/logo/logo-no-background.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
             Dish Discovery
-          </a>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">History</a>
-              </li>
-            </ul>
-        </div>
-    </nav>
-      <!-- main section and search bar -->
-    <div class="container-fluid">
-      <h1> Dish Discovery</h1>
-      <form class="d-flex" role="search">
-       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-       <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">History</a>
+            </li>
+          </ul>
+      </div>
+  </nav>
+     
+   <!-- main section and search bar -->
+  <div class="container-fluid">
+    <h1> Dish Discovery</h1>
+    <form id="recipe-form">
+      <div class="mb-3">
+       <input class="form-control" id="keyword" type="text" placeholder="Search" aria-label="Search" required>
+      </div>
        
-       <!-- check buttons for filters -->
-       <h2>Filter by</h2>
-       <div class="form-check form-check-inline">
-         <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-         <label class="form-check-label" for="inlineCheckbox1">Vegan</label>
+      <!-- check buttons for filters -->
+       <div class="form-group">
+        <label>Filter by:</label>
+       </div>
+        <div class="form-check form-check-inline">
+         <input class="form-check-input" type="checkbox" id="vegan" name="dietary" value="vegan">
+         <label class="form-check-label" for="vegan">Vegan</label>
        </div>
        <div class="form-check form-check-inline">
-         <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-         <label class="form-check-label" for="inlineCheckbox2">Vegetarian</label>
+         <input class="form-check-input" type="checkbox" id="vegetarian" name="dietary" value="vegetarian">
+         <label class="form-check-label" for="vegetarian">Vegetarian</label>
        </div>
        <div class="form-check form-check-inline">
-         <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-         <label class="form-check-label" for="inlineCheckbox3">Gluten-free</label>
+         <input class="form-check-input" type="checkbox" id="gluten-free" name="dietary" value="gluten-free">
+         <label class="form-check-label" for="gluten-free">Gluten-free</label>
         </div>
         <div class="form-check form-check-inline">
-         <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
-         <label class="form-check-label" for="inlineCheckbox4">Egg-free</label>
+         <input class="form-check-input" type="checkbox" id="egg-free" name="dietary" value="egg-free">
+         <label class="form-check-label" for="egg-free">Egg-free</label>
         </div>
         <div class="form-check form-check-inline">
-         <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
-         <label class="form-check-label" for="inlineCheckbox5">Tree-Nut-free</label>
+         <input class="form-check-input" type="checkbox" id="tree-nut-free" name="dietary" value="tree-nut-free">
+         <label class="form-check-label" for="tree-nut-free">Tree-Nut-free</label>
         </div>
         <div class="form-check form-check-inline">
-         <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
-         <label class="form-check-label" for="inlineCheckbox6">Peanut-free</label>
+         <input class="form-check-input" type="checkbox" id="peanut-free" name="dietary" value="peanut-free">
+         <label class="form-check-label" for="peanut-free">Peanut-free</label>
         </div>
         <div class="form-check form-check-inline">
-         <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">
-         <label class="form-check-label" for="inlineCheckbox7">Fish-free</label>
+         <input class="form-check-input" type="checkbox" id="fish-free" name="dietary" value="fish-free">
+         <label class="form-check-label" for="fish-free">Fish-free</label>
         </div>
         <div class="form-check form-check-inline">
-         <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option8">
-         <label class="form-check-label" for="inlineCheckbox8">Dairy-free</label>
+         <input class="form-check-input" type="checkbox" id="dairy-free" name="dietary" value="dairy-free">
+         <label class="form-check-label" for="dairy-free">Dairy-free</label>
         </div>
         <div class="form-check form-check-inline">
-         <input class="form-check-input" type="checkbox" id="inlineCheckbox9" value="option9">
-         <label class="form-check-label" for="inlineCheckbox9">Sesame-Free</label>
+         <input class="form-check-input" type="checkbox" id="sesame-free" name="dietary" value="sesame-free">
+         <label class="form-check-label" for="sesame-free">Sesame-Free</label>
         </div>
         <div class="form-check form-check-inline">
-         <input class="form-check-input" type="checkbox" id="inlineCheckbox10" value="option10">
-         <label class="form-check-label" for="inlineCheckbox10">Wheat-Free</label>
+         <input class="form-check-input" type="checkbox" id="wheat-free" name="dietary" value="wheat-free">
+         <label class="form-check-label" for="wheat-free">Wheat-Free</label>
         </div>
         <div class="form-check form-check-inline">
-         <input class="form-check-input" type="checkbox" id="inlineCheckbox11" value="option11">
-         <label class="form-check-label" for="inlineCheckbox11">Soy-Free</label>
+         <input class="form-check-input" type="checkbox" id="soy-free" name="dietary" value="soy-free">
+         <label class="form-check-label" for="soy-free">Soy-Free</label>
         </div>
-    </div>
+      </div>
+      <!-- submit button -->
+      <button class="btn btn-primary" type="submit">Search</button>
+   </form> 
+  </div> 
+
+  
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
