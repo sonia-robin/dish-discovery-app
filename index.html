@@ -3,11 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Dish Discovery</title>
 </head>
 <body>
-    
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="./assets/logo/logo-no-background.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            Dish Discovery
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">History</a>
+              </li>
+            </ul>
+        </div>
+    </nav>
+      <!-- main section and search bar -->
+    <div class="container-fluid">
+      <h1> Dish Discovery</h1>
+      <form class="d-flex" role="search">
+       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+       <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+       
+       <!-- check buttons for filters -->
+       <h2>Filter by</h2>
+       <div class="form-check form-check-inline">
+         <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+         <label class="form-check-label" for="inlineCheckbox1">Vegan</label>
+       </div>
+       <div class="form-check form-check-inline">
+         <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+         <label class="form-check-label" for="inlineCheckbox2">Vegetarian</label>
+       </div>
+       <div class="form-check form-check-inline">
+         <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+         <label class="form-check-label" for="inlineCheckbox3">Gluten-free</label>
+        </div>
+        <div class="form-check form-check-inline">
+         <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+         <label class="form-check-label" for="inlineCheckbox4">Egg-free</label>
+        </div>
+        <div class="form-check form-check-inline">
+         <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+         <label class="form-check-label" for="inlineCheckbox5">Tree-Nut-free</label>
+        </div>
+        <div class="form-check form-check-inline">
+         <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
+         <label class="form-check-label" for="inlineCheckbox6">Peanut-free</label>
+        </div>
+        <div class="form-check form-check-inline">
+         <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">
+         <label class="form-check-label" for="inlineCheckbox7">Fish-free</label>
+        </div>
+        <div class="form-check form-check-inline">
+         <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option8">
+         <label class="form-check-label" for="inlineCheckbox8">Dairy-free</label>
+        </div>
+        <div class="form-check form-check-inline">
+         <input class="form-check-input" type="checkbox" id="inlineCheckbox9" value="option9">
+         <label class="form-check-label" for="inlineCheckbox9">Sesame-Free</label>
+        </div>
+        <div class="form-check form-check-inline">
+         <input class="form-check-input" type="checkbox" id="inlineCheckbox10" value="option10">
+         <label class="form-check-label" for="inlineCheckbox10">Wheat-Free</label>
+        </div>
+        <div class="form-check form-check-inline">
+         <input class="form-check-input" type="checkbox" id="inlineCheckbox11" value="option11">
+         <label class="form-check-label" for="inlineCheckbox11">Soy-Free</label>
+        </div>
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
