@@ -1,10 +1,33 @@
+document.getElementById('recipe-form').addEventListener('submit', function (event) {
+  event.preventDefault(); 
+
 var URLaddress = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=lasagna+cheese&key=AIzaSyBz2fXaCNuTho3B_k-OLJpoMlLzrnw7KfA"
 
 var apiKey = "AIzaSyBz2fXaCNuTho3B_k-OLJpoMlLzrnw7KfA"
 var baseSearchUrl = "https://www.youtube.com/watch?v="
 var userInput = "pasta";
-var parameter = "vegan";
-var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=6&q=" + userInput + "+" + parameter + "&key=" + apiKey;
+var parameter = "tree nut-free";
+var keyword = document.querySelector('#keyword').value;
+var diet = [];
+var allergies = [];
+
+var checkedDietary = document.querySelectorAll("input[type='checkbox'][name='dietary']:checked");
+var checkedAllergies = document.querySelectorAll("input[type='checkbox'][name='allergies']:checked");
+
+checkedDietary.forEach(function(checkbox) {
+    diet.push(checkbox.value);
+});
+console.log(diet);
+
+checkedAllergies.forEach(function (checkbox) {
+  var labelFor = checkbox.getAttribute("id");
+  if (labelFor) {
+    allergies.push(labelFor);
+  }
+});
+console.log(allergies);
+
+var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=6&q=" + keyword + "+" + diet + "+recipe&key=" + apiKey;
 
 var youTubeDiv = document.querySelector("#youtube-api");
 
@@ -51,4 +74,5 @@ fetch(queryURL)
   linkBtn.innerHTML = "YouTube";
   cardBody.appendChild(linkBtn);
   }  
+})
 });
