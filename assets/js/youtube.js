@@ -1,12 +1,8 @@
 document.getElementById('recipe-form').addEventListener('submit', function (event) {
   event.preventDefault(); 
 
-var URLaddress = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=lasagna+cheese&key=AIzaSyBz2fXaCNuTho3B_k-OLJpoMlLzrnw7KfA"
-
 var apiKey = "AIzaSyBz2fXaCNuTho3B_k-OLJpoMlLzrnw7KfA"
 var baseSearchUrl = "https://www.youtube.com/watch?v="
-var userInput = "pasta";
-var parameter = "tree nut-free";
 var keyword = document.querySelector('#keyword').value;
 var diet = [];
 var allergies = [];
@@ -38,6 +34,8 @@ fetch(queryURL)
 .then(function (data) {
   
   console.log(data);
+  // empty YouTube section first
+  youTubeDiv.textContent = "";
   // retrieve video ID needed to create a link, title, thumbnail
   for (var i = 0; i < data.items.length; i++){
   var videoId = data.items[i].id.videoId;
@@ -47,9 +45,11 @@ fetch(queryURL)
   // create collumn div
   var colDiv = document.createElement("div");
   colDiv.setAttribute("class", "col");
-  // create card div element and set bootsrap class card, append
-  var cardDiv = document.createElement("div");
-  cardDiv.setAttribute("class", "card");
+  // create card div element which is a link to YouTube video and set bootsrap class card, append
+  var cardDiv = document.createElement("a");
+  cardDiv.setAttribute("href", baseSearchUrl + videoId);
+  cardDiv.setAttribute("target", "blank");
+  cardDiv.setAttribute("class", "card link-underline link-underline-opacity-0 mt-3");
   youTubeDiv.appendChild(cardDiv);
   // create img element and set class and src, append to card div
   var imgEl = document.createElement("img");
@@ -62,17 +62,10 @@ fetch(queryURL)
   cardBody.setAttribute("class", "card-body");
   cardDiv.append(cardBody);
   // create title el
-  var cardTitle = document.createElement("h5");
-  cardTitle.setAttribute("class", "card-title");
+  var cardTitle = document.createElement("h6");
+  cardTitle.setAttribute("class", "card-title text-center");
   cardTitle.textContent = titleVideo;
   cardBody.appendChild(cardTitle);
-  // create button element for link
-  var linkBtn = document.createElement("a");
-  linkBtn.setAttribute("class", "btn btn-primary");
-  linkBtn.setAttribute("href", baseSearchUrl + videoId);
-  linkBtn.setAttribute("target", "blank");
-  linkBtn.innerHTML = "YouTube";
-  cardBody.appendChild(linkBtn);
   }  
 })
 });
