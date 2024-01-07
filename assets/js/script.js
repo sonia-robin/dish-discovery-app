@@ -1,21 +1,3 @@
-var recipeForm = document.querySelector('#recipe-form');
-
-    recipeForm.addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      var keyword = document.querySelector('#keyword').value;
-      var dietaryRequirements = [];
-      });
-
-      var recipeForm = document.querySelector('#recipe-form');
-
-    recipeForm.addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      var keyword = document.querySelector('#keyword').value;
-      var dietaryRequirements = [];
-      });
-
 document.getElementById('recipe-form').addEventListener('submit', function (event) {
   event.preventDefault(); 
 
@@ -23,8 +5,11 @@ document.getElementById('recipe-form').addEventListener('submit', function (even
   var searchInput = document.getElementById('keyword').value;
   var recipeListContainer = document.getElementById('recipe-List');
 
-  var queryurl = "https://api.spoonacular.com/recipes/complexSearch?query=" + "pasa" + "&apiKey=" + apiKey
+  var queryurl = "https://api.spoonacular.com/recipes/complexSearch?query=" + "pasta" + "&apiKey=" + apiKey
 
+  console.log(queryurl);
+
+  console.log("Hi");
 
   fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${searchInput}&apiKey=${apiKey}`)
 
@@ -36,11 +21,11 @@ document.getElementById('recipe-form').addEventListener('submit', function (even
               data.results.slice(0, 6).forEach(function(recipe) {
                   var recipeItem = document.createElement('div');
                   recipeItem.innerHTML = `
-                      <h3>${recipe.title}</h3>
-                      <p>${recipe.summary}</p>
-                      <p>Ready in ${recipe.readyInMinutes} minutes</p>
-                      <hr>
-                  `;
+
+                  <h3>${recipe.title}</h3>
+                  <p>ID: ${recipe.id}</p>
+                  <img src="${recipe.image}" alt="${recipe.title}" style="max-width: 100%; height: auto;">
+              `;
                   recipeListContainer.appendChild(recipeItem);
               });
           } else {
