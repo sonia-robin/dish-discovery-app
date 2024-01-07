@@ -1,8 +1,8 @@
 document.getElementById('recipe-form').addEventListener('submit', function (event) {
   event.preventDefault(); 
 
-var apiKey = "AIzaSyBz2fXaCNuTho3B_k-OLJpoMlLzrnw7KfA"
-var baseSearchUrl = "https://www.youtube.com/watch?v="
+var apiKey = "AIzaSyBz2fXaCNuTho3B_k-OLJpoMlLzrnw7KfA";
+var baseSearchUrl = "https://www.youtube.com/watch?v=";
 var keyword = document.querySelector('#keyword').value;
 var diet = [];
 var allergies = [];
@@ -27,6 +27,10 @@ var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxRes
 
 var youTubeDiv = document.querySelector("#youtube-api");
 
+function unEntity(str){
+  return str.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+}
+
 fetch(queryURL)
 .then(function (response) {
   return response.json();
@@ -39,17 +43,17 @@ fetch(queryURL)
   // retrieve video ID needed to create a link, title, thumbnail
   for (var i = 0; i < data.items.length; i++){
   var videoId = data.items[i].id.videoId;
-  var titleVideo = data.items[i].snippet.title;
+  var titleVideo = unEntity(data.items[i].snippet.title);
   var thumbnailImg = data.items[i].snippet.thumbnails.medium.url;
 
-  // create collumn div
+  // create column div
   var colDiv = document.createElement("div");
   colDiv.setAttribute("class", "col");
   // create card div element which is a link to YouTube video and set bootsrap class card, append
   var cardDiv = document.createElement("a");
   cardDiv.setAttribute("href", baseSearchUrl + videoId);
   cardDiv.setAttribute("target", "blank");
-  cardDiv.setAttribute("class", "card link-underline link-underline-opacity-0 mt-3");
+  cardDiv.setAttribute("class", "card link-underline link-underline-opacity-0 p-0");
   youTubeDiv.appendChild(cardDiv);
   // create img element and set class and src, append to card div
   var imgEl = document.createElement("img");
