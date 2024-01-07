@@ -27,14 +27,8 @@ allergies.push(labelFor);
 }
 });
 console.log(allergies);
+fetchRecipeId(searchInput, diet, allergies, apiKey);
 
-var arrayIds = fetchRecipeId(searchInput, diet, allergies, apiKey);
-    console.log(arrayIds);
-    var idsString = arrayIds.toString();
-    console.log(idsString);
-
-    
-    displayRecipe(idsString, apiKey);
 });
 
 // Function to search recipes by user input and filtres and get recipe ID
@@ -53,7 +47,9 @@ function fetchRecipeId (searchPar, dietPar, allergiesPar, apiKeyPar){
                 recipeId.push(data.results[i].id)
            }
            console.log(recipeId);
-           
+           var idsString = recipeId.toString();
+           console.log(idsString);
+           displayRecipe(idsString, apiKey);
 
         } else {
             recipeListContainer.innerHTML = 'No recipes found.';
