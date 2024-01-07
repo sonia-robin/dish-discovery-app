@@ -1,0 +1,81 @@
+/* === Google Font - Poppins === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    background: #F6F6F6;
+}
+
+h1 {
+    color: F6F6F6;
+    align-items: center;
+    text-indent: -9999px;
+    background: url(images/dish-discovery-logo-no-bk-400.png) no-repeat;
+    width: 400px;
+    height: 250px;
+    margin: 10px;
+}
+
+.navbar {
+    background-color: rgb(14, 146, 82) !important;
+
+}
+
+a {
+    color: #F6F6F6 !important;
+}
+
+#main-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#keyword {
+    margin: 0 auto;
+    width: 400px;
+    border-radius: 20px;
+}
+
+.form.form-control {
+    margin: 30px;
+}
+
+#filter {
+    color: #0E9252;
+    margin: 10px 0 18px 0;
+}
+
+.btn {
+    margin: 30px;
+    background: #FFBD59;
+    outline: none;
+    border: none;
+    color: #F6F6F6;
+    padding: 8px 22px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: white;
+    background: #FF5757;
+}
+
+footer {
+    font-size: smaller;
+}
