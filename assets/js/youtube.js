@@ -28,7 +28,7 @@ var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxRes
 var youTubeDiv = document.querySelector("#youtube-api");
 
 function unEntity(str){
-  return str.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+  return str.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&#39;/g, "'");
 }
 
 fetch(queryURL)
@@ -56,11 +56,21 @@ fetch(queryURL)
   cardDiv.setAttribute("class", "card link-underline link-underline-opacity-0 p-0");
   youTubeDiv.appendChild(cardDiv);
   // create img element and set class and src, append to card div
+  var imgIconEl = document.createElement("div");
+  imgIconEl.setAttribute("class", "center-container");
+  cardDiv.appendChild(imgIconEl);
   var imgEl = document.createElement("img");
   imgEl.setAttribute("class", "card-img-top");
   imgEl.setAttribute("src", thumbnailImg);
   imgEl.setAttribute("alt", "thumbnail");
-  cardDiv.appendChild(imgEl);
+  imgIconEl.appendChild(imgEl);
+  var iconEl = document.createElement("div");
+  iconEl.setAttribute("class", "icon-overlay");
+  cardDiv.appendChild(iconEl);
+  var icon = document.createElement("i");
+  icon.setAttribute("class", "fa fa-youtube-play icon-overlay");
+  imgIconEl.appendChild(icon);
+
   // create card body el, set class, append to card div
   var cardBody = document.createElement("div");
   cardBody.setAttribute("class", "card-body");
