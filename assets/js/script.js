@@ -3,13 +3,9 @@ document.getElementById('recipe-form').addEventListener('submit', function (even
 
   var apiKey = "08cce16bdc354b6aa373715c0843bfc8";
   var searchInput = document.getElementById('keyword').value;
-  var recipeListContainer = document.getElementById('recipe-List');
+  var recipeListContainer = document.getElementById('spoonacular-api');
 
   var queryurl = "https://api.spoonacular.com/recipes/complexSearch?query=" + "pasta" + "&apiKey=" + apiKey
-
-  console.log(queryurl);
-
-  console.log("Hi");
 
   fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${searchInput}&apiKey=${apiKey}`)
 
