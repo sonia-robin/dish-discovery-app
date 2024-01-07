@@ -79,3 +79,34 @@ a {
 footer {
     font-size: smaller;
 }
+#recipe-List {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.recipe-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+.icon-overlay {
+    position: absolute;
+    top: 50%;;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: rgba(225, 225, 225, 0.9);
+}
+.center-container {
+    position: relative;
+}
+
+
+
+
+
+
+
+
