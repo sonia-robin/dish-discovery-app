@@ -16,6 +16,7 @@
           <img src="./assets/logo/dd-logo-no-text-navbar.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
             Dish Discovery
         </a>
+        <!-- Modal button -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
           Search History
         </button>
@@ -34,8 +35,7 @@
         ...
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
+        <button type="button" class="search-history btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -51,7 +51,7 @@
        
       <!-- check buttons for filters -->
        <div class="form-group">
-        <label id="filter">Filter by:</label>
+        <label id="filter-diets">Filter by Diets:</label>
        </div>
         <div class="form-check form-check-inline">
          <input class="form-check-input" type="checkbox" id="vegan" name="dietary" value="vegan">
@@ -61,40 +61,43 @@
          <input class="form-check-input" type="checkbox" id="vegetarian" name="dietary" value="vegetarian">
          <label class="form-check-label" for="vegetarian">Vegetarian</label>
        </div>
+       <div class="form-group">
+        <label id="filter-allergies">Filter by Allergies:</label>
+       </div>
        <div class="form-check form-check-inline">
-         <input class="form-check-input" type="checkbox" id="gluten" name="dietary" value="gluten">
-         <label class="form-check-label" for="gluten">Gluten-free</label>
+         <input class="form-check-input" type="checkbox" id="gluten" name="allergies" value="gluten">
+         <label class="form-check-label" for="gluten">Gluten-Free</label>
         </div>
         <div class="form-check form-check-inline">
-         <input class="form-check-input" type="checkbox" id="egg" name="dietary" value="egg">
-         <label class="form-check-label" for="egg">Egg-free</label>
+         <input class="form-check-input" type="checkbox" id="egg" name="allergies" value="egg">
+         <label class="form-check-label" for="egg">Egg-Free</label>
         </div>
         <div class="form-check form-check-inline">
-         <input class="form-check-input" type="checkbox" id="tree-nut" name="dietary" value="tree-nut">
-         <label class="form-check-label" for="tree-nut">Tree Nut-free</label>
+         <input class="form-check-input" type="checkbox" id="tree-nut" name="allergies" value="tree-nut">
+         <label class="form-check-label" for="tree-nut">Tree Nut-Free</label>
         </div>
         <div class="form-check form-check-inline">
-         <input class="form-check-input" type="checkbox" id="peanut" name="dietary" value="peanut">
-         <label class="form-check-label" for="peanut">Peanut-free</label>
+         <input class="form-check-input" type="checkbox" id="peanut" name="allergies" value="peanut">
+         <label class="form-check-label" for="peanut">Peanut-Free</label>
         </div>
         <div class="form-check form-check-inline">
-         <input class="form-check-input" type="checkbox" id="seafood" name="dietary" value="seafood">
-         <label class="form-check-label" for="seafood">seafood-free</label>
+         <input class="form-check-input" type="checkbox" id="seafood" name="allergies" value="seafood">
+         <label class="form-check-label" for="seafood">Seafood-Free</label>
         </div>
         <div class="form-check form-check-inline">
-         <input class="form-check-input" type="checkbox" id="dairy" name="dietary" value="dairy">
-         <label class="form-check-label" for="dairy">Dairy-free</label>
+         <input class="form-check-input" type="checkbox" id="dairy" name="allergies" value="dairy">
+         <label class="form-check-label" for="dairy">Dairy-Free</label>
         </div>
         <div class="form-check form-check-inline">
-         <input class="form-check-input" type="checkbox" id="sesame" name="dietary" value="sesame">
+         <input class="form-check-input" type="checkbox" id="sesame" name="allergies" value="sesame">
          <label class="form-check-label" for="sesame">Sesame-Free</label>
         </div>
         <div class="form-check form-check-inline">
-         <input class="form-check-input" type="checkbox" id="wheat" name="dietary" value="wheat">
+         <input class="form-check-input" type="checkbox" id="wheat" name="allergies" value="wheat">
          <label class="form-check-label" for="wheat">Wheat-Free</label>
         </div>
         <div class="form-check form-check-inline">
-         <input class="form-check-input" type="checkbox" id="soy" name="dietary" value="soy">
+         <input class="form-check-input" type="checkbox" id="soy" name="allergies" value="soy">
          <label class="form-check-label" for="soy">Soy-Free</label>
         </div>
       </div>
