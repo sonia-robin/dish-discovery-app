@@ -1,6 +1,6 @@
 // Global variables
 var apiKey = "08cce16bdc354b6aa373715c0843bfc8";
-var apiKeySona = "f197b6604aa242d3bf1aa8e74d25e259"
+var apiKeySona = "f197b6604aa242d3bf1aa8e74d25e259";
 var recipeListContainer = document.getElementById('spoonacular-api');
 console.log(recipeListContainer);
 
@@ -94,7 +94,7 @@ function displayRecipe (idsPar, apiKeyPar){
                 recipeListContainer.appendChild(colDiv)
                 // create card div element which is a link to an empty page and set bootsrap class card, append
                 var cardDiv = document.createElement("a");
-                cardDiv.setAttribute("href", "#");
+                cardDiv.setAttribute("href", `./recipe.html?recipe-id=${data[i].id}`);
                 cardDiv.setAttribute("target", "blank");
                 cardDiv.setAttribute("class", "card h-100 link-underline link-underline-opacity-0 p-0");
                 colDiv.appendChild(cardDiv);
@@ -111,7 +111,7 @@ function displayRecipe (idsPar, apiKeyPar){
                 cardDiv.append(cardBody);
                 // create title el
                 var cardTitle = document.createElement("h6");
-                cardTitle.setAttribute("class", "card-title text-center");
+                cardTitle.setAttribute("class", "card-title");
                 cardTitle.textContent = recipeTitle;
                 cardBody.appendChild(cardTitle);
                 }
