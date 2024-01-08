@@ -9,10 +9,8 @@
 }
 
 body {
-    display: flex;
-    align-items: center;
+   align-items: center;
     flex-flow: row wrap;
-    display: inline-block;
     position: relative;
     text-align: center;
     background: #F6F6F6;
@@ -33,7 +31,7 @@ h1 {
 
 }
 
-a {
+.navbar a {
     color: #F6F6F6 !important;
 }
 
