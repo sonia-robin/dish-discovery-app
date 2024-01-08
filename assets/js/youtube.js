@@ -23,11 +23,11 @@ checkedAllergies.forEach(function (checkbox) {
 });
 console.log(allergies);
 
-var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=6&q=" + keyword + "+" + diet + "+recipe&key=" + apiKey;
+var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=" + keyword + "+" + diet + "+recipe&key=" + apiKey;
 
 var youTubeDiv = document.querySelector("#youtube-api");
 
-function unEntity(str){
+function replaceHtmlEntity(str){
   return str.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&#39;/g, "'");
 }
 
@@ -40,21 +40,22 @@ fetch(queryURL)
   console.log(data);
   // empty YouTube section first
   youTubeDiv.textContent = "";
-  // retrieve video ID needed to create a link, title, thumbnail
+  // retrieve video ID (needed to create a link), title, thumbnail
   for (var i = 0; i < data.items.length; i++){
   var videoId = data.items[i].id.videoId;
-  var titleVideo = unEntity(data.items[i].snippet.title);
+  var titleVideo = replaceHtmlEntity(data.items[i].snippet.title);
   var thumbnailImg = data.items[i].snippet.thumbnails.medium.url;
 
   // create column div
   var colDiv = document.createElement("div");
   colDiv.setAttribute("class", "col");
+  youTubeDiv.appendChild(colDiv)
   // create card div element which is a link to YouTube video and set bootsrap class card, append
   var cardDiv = document.createElement("a");
   cardDiv.setAttribute("href", baseSearchUrl + videoId);
   cardDiv.setAttribute("target", "blank");
-  cardDiv.setAttribute("class", "card link-underline link-underline-opacity-0 p-0");
-  youTubeDiv.appendChild(cardDiv);
+  cardDiv.setAttribute("class", "card h-100 link-underline link-underline-opacity-0 p-0");
+  colDiv.appendChild(cardDiv);
   // create img element and set class and src, append to card div
   var imgIconEl = document.createElement("div");
   imgIconEl.setAttribute("class", "center-container");
@@ -66,10 +67,10 @@ fetch(queryURL)
   imgIconEl.appendChild(imgEl);
   var iconEl = document.createElement("div");
   iconEl.setAttribute("class", "icon-overlay");
-  cardDiv.appendChild(iconEl);
+  imgIconEl.appendChild(iconEl);
   var icon = document.createElement("i");
-  icon.setAttribute("class", "fa fa-youtube-play icon-overlay");
-  imgIconEl.appendChild(icon);
+  icon.setAttribute("class", "fa fa-youtube-play");
+  iconEl.appendChild(icon);
 
   // create card body el, set class, append to card div
   var cardBody = document.createElement("div");
