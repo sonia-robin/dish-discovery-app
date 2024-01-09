@@ -9,7 +9,7 @@
 }
 
 body {
-    align-items: center;
+   align-items: center;
     flex-flow: row wrap;
     position: relative;
     text-align: center;
@@ -31,7 +31,7 @@ h1 {
 
 }
 
-a {
+.navbar a {
     color: #F6F6F6 !important;
 }
 
