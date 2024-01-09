@@ -1,6 +1,8 @@
 // Global variables
 var apiKey = "08cce16bdc354b6aa373715c0843bfc8";
 var apiKeySona = "f197b6604aa242d3bf1aa8e74d25e259";
+var apiKeyS = "5f91a7deb5df4f2db6a1138caa6d3e5f";
+var apiKeyF = "8f932f55cd354bf89c0d697bb2662998";
 var recipeListContainer = document.getElementById('spoonacular-api');
 console.log(recipeListContainer);
 
@@ -31,7 +33,7 @@ document.getElementById('recipe-form').addEventListener('submit', function (even
     });
     console.log(allergies);
     
-    fetchRecipeId(searchInput, diet, allergies, apiKeyF);
+    fetchRecipeId(searchInput, diet, allergies, apiKeyS);
 
     });
 
@@ -54,7 +56,7 @@ function fetchRecipeId (searchPar, dietPar, allergiesPar, apiKeyPar){
            console.log(recipeId);
         //    var idsString = recipeId.toString(); //CHECK IF CONVERSION TO STRING NEEDED - IT IS NOT NEEDED
         //    console.log(idsString);
-           displayRecipe(recipeId, apiKeyF);
+           displayRecipe(recipeId, apiKeyS);
 
         } else {
             recipeListContainer.innerHTML = 'No recipes found.';
