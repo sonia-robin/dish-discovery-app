@@ -9,7 +9,7 @@ Imagine finding the perfect meal in an easy, fuss-free way, tailored to your pre
 [Screenshot](https://github.com/sonia-robin/dish-discovery-app/assets/dish-discovery-screenshot)
 
 ## Live Demo
-https://sonia-robin.github.io//dish-discovery-app
+https://sonia-robin.github.io/dish-discovery-app/
 
 ## Creators
 Arrays of CALC:
