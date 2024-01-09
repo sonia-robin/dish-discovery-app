@@ -9,7 +9,7 @@
 }
 
 body {
-   align-items: center;
+    align-items: center;
     flex-flow: row wrap;
     position: relative;
     text-align: center;
@@ -26,6 +26,10 @@ h1 {
     margin: 10px;
 }
 
+footer {
+    font-size: smaller;
+}
+
 .navbar {
     background-color: rgb(14, 146, 82) !important;
 
@@ -35,26 +39,8 @@ h1 {
     color: #F6F6F6 !important;
 }
 
-#main-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-}
-
-#keyword {
-    margin: 0 auto;
-    width: 400px;
-    border-radius: 20px;
-}
-
 .form.form-control {
     margin: 30px;
-}
-
-#filter {
-    color: #0E9252;
-    margin: 10px 0 18px 0;
 }
 
 .btn {
@@ -72,18 +58,6 @@ h1 {
 .btn:hover {
     color: white;
     background: #FF5757;
-}
-
-footer {
-    font-size: smaller;
-}
-
-#recipe-List {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding-top: 20px;
-    padding-left: 20px;
 }
 
 .recipe-item {
@@ -104,4 +78,30 @@ footer {
 
 .center-container {
     position: relative;
+}
+
+#main-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#keyword {
+    margin: 0 auto;
+    width: 400px;
+    border-radius: 20px;
+}
+
+#filter-diets,
+#filter-allergies {
+    color: #0E9252;
+    margin: 10px 0 18px 0;
+}
+
+#recipe-List {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
 }
