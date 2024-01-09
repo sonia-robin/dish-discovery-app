@@ -31,7 +31,7 @@ document.getElementById('recipe-form').addEventListener('submit', function (even
     });
     console.log(allergies);
     
-    fetchRecipeId(searchInput, diet, allergies, apiKeySona);
+    fetchRecipeId(searchInput, diet, allergies, apiKeyF);
 
     });
 
@@ -54,7 +54,7 @@ function fetchRecipeId (searchPar, dietPar, allergiesPar, apiKeyPar){
            console.log(recipeId);
         //    var idsString = recipeId.toString(); //CHECK IF CONVERSION TO STRING NEEDED - IT IS NOT NEEDED
         //    console.log(idsString);
-           displayRecipe(recipeId, apiKeySona);
+           displayRecipe(recipeId, apiKeyF);
 
         } else {
             recipeListContainer.innerHTML = 'No recipes found.';
@@ -97,10 +97,11 @@ function displayRecipe (idsPar, apiKeyPar){
                 cardDiv.setAttribute("href", `./recipe.html?recipe-id=${data[i].id}`);
                 cardDiv.setAttribute("target", "blank");
                 cardDiv.setAttribute("class", "card h-100 link-underline link-underline-opacity-0 p-0");
+                cardDiv.style.overflow = "hidden";
                 colDiv.appendChild(cardDiv);
                 // create img element and set class and src, append to card div
                 var imgEl = document.createElement("img");
-                imgEl.setAttribute("class", "card-img-top");
+                imgEl.setAttribute("class", "card-img-top custom-width");
                 imgEl.setAttribute("src", recipeImg);
                 imgEl.setAttribute("alt", "recipe-image");
                 cardDiv.appendChild(imgEl);
