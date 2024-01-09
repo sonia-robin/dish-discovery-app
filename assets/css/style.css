@@ -79,6 +79,19 @@ footer {
 .center-container {
     position: relative;
 }
+.custom-width {
+    width: 122%;
+    margin-left: -11%;
+    margin-right: -10%;
+    margin-top: -5%;
+}
+.custom-width-recipe {
+    width: 122%;
+    margin-left: -11%;
+    margin-right: -10%;
+    margin-top: -5%;
+    margin-bottom: -5%;
+}
 
 #main-section {
     display: flex;
@@ -104,4 +117,12 @@ footer {
     gap: 20px;
     padding-top: 20px;
     padding-left: 20px;
+}
+
+#recipe-info ul{
+    list-style: none;
+    padding-left: 0px;
+}
+#recipe-info li {
+    margin: 0.3em 0;
 }
