@@ -9,7 +9,16 @@ Imagine finding the perfect meal in an easy, fuss-free way, tailored to your pre
 [Screenshot](https://github.com/sonia-robin/dish-discovery-app/assets/dish-discovery-screenshot)
 
 ## Usage 
-
+🔍 Search & Choose: 
+Type in your cravings and dietary needs. 
+Our app serves up 6 recipes that match your every whim. 
+Each recipe is a clickable card.
+👩‍🍳 Cooking Journey: 
+Click the card to discover cooking time, servings, ingredients & step-by-step instructions.
+🎥 Culinary Cinema: 
+ Below the recipes, a clickable treasure trove of YouTube videos awaits. 
+📚 Search Memory Lane: 
+Worried about forgetting your favourites? Fear not, the search history is saved in local storage, accessible from the navbar.
 
 ## Live Demo
 https://sonia-robin.github.io/dish-discovery-app/
@@ -30,9 +39,19 @@ git clone https://github.com/sonia-robin/dish-discovery-app
 Distributed under the MIT License, See LICENSE.txt for more info.
 
 ## Acknowledgements
-Bootstrap, Spoonacular API, YouTube Data API, 
+[Bootstrap](https://getbootstrap.com),
+[JSON](https://www.json.org/json-en.html),
+[Spoonacular API](https://spoonacular.com/food-api),
+[YouTube Data API](https://www.googleapis.com/youtube/v3/search?part=snippet&q=),
+[Stack Overflow](https://stackoverflow.com),
+[CSS-Tricks](https://css-tricks.com/),
+[Google Fonts](https://fonts.google.com),
+[Figma](https://www.figma.com),
+[Canva](https://www.canva.com),
+
 
 ## Contributing
 If you have any suggestions or improvements, feel free to open an [issue](https://github.com/sonia-robin/dish-discovery-app/issues) or create a [pull request](https://github.com/sonia-robin/dish-discovery-app/pulls). Contributions are welcome!
 
 Enjoy Dish Discovery App. If you have any questions or need help, don't hesitate to reach out. Happy coding!
+
