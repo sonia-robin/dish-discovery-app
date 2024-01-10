@@ -4,6 +4,7 @@ var recipeSection = document.getElementById("recipe-info")
 var apiKeySona = "f197b6604aa242d3bf1aa8e74d25e259";
 var apiKeyF = "8f932f55cd354bf89c0d697bb2662998";
 var apiKeyS = "5f91a7deb5df4f2db6a1138caa6d3e5f";
+var apiKey = "08cce16bdc354b6aa373715c0843bfc8";
 
 var queryUrlRecipeInfo = "https://api.spoonacular.com/recipes/" + recipeIdUrl + "/information?includeNutrition=false&apiKey=" + apiKey;
 
