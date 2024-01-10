@@ -1,5 +1,5 @@
 
-  <img src="assets/css/images/dish-discovery-logo-no-bk-275.png" width="300"/> 
+  <img src="assets/css/images/dish-discovery-logo-no-bk-400.png" width="300"/> 
 
 # Dish Discovery App
 
@@ -7,6 +7,9 @@
 Imagine finding the perfect meal in an easy, fuss-free way, tailored to your preferences. Dish Discovery App transforms the way you explore tasty food by allowing you to search for recipes based on your specific wants and dietary needs. With a user-intuitive interface, simply enter your search and dietary preferences, and presto! You'll be presented with a curated selection of mouthwatering recipes, each featuring an inviting picture, ingredient list, and step-by-step instructions for hassle-free cooking. But that's not all, we take your experience to the next level by integrating curated YouTube videos alongside each recipe, ensuring your dish turns out perfect every time. Make mealtime fun again with Dish Discovery App – where creativity meets functionality, and every meal is hussle-free.
 
 [Screenshot](https://github.com/sonia-robin/dish-discovery-app/assets/dish-discovery-screenshot)
+
+## Usage 
+
 
 ## Live Demo
 https://sonia-robin.github.io/dish-discovery-app/
@@ -27,7 +30,7 @@ git clone https://github.com/sonia-robin/dish-discovery-app
 Distributed under the MIT License, See LICENSE.txt for more info.
 
 ## Acknowledgements
-Bootstrap,  Spoonacular API, YouTube Data API
+Bootstrap, Spoonacular API, YouTube Data API, 
 
 ## Contributing
 If you have any suggestions or improvements, feel free to open an [issue](https://github.com/sonia-robin/dish-discovery-app/issues) or create a [pull request](https://github.com/sonia-robin/dish-discovery-app/pulls). Contributions are welcome!
