@@ -39,7 +39,7 @@ function fetchRecipeId(searchPar, dietPar, cuisinePar, apiKeyPar) {
   var queryUrl =
     "https://api.spoonacular.com/recipes/complexSearch?query=" +
     searchPar +
-    "&number=1&diet=" +
+    "&number=6&diet=" +
     dietPar +
     "&cuisine=" +
     cuisinePar +
@@ -162,7 +162,7 @@ function displayRecipe(idsPar, apiKeyPar) {
 function displayYouTubeResults(searchPar, dietPar, cuisinePar, apiKeyPar) {
   var baseSearchUrl = "https://www.youtube.com/watch?v=";
   var queryURL =
-    "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=" +
+    "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=6&q=" +
     searchPar +
     "+" +
     dietPar + "+" + cuisinePar +
