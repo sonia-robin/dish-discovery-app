@@ -20,8 +20,8 @@ fetch(queryUrlRecipeInfo)
         var cookingTime = data.readyInMinutes;
         var servings = data.servings;
         document.getElementById("recipe-title").textContent = recipeTitle;
-        document.getElementById("cooking-time").textContent = "Cooking time: " + cookingTime + "mins";
-        document.getElementById("servings").textContent = "Servings: " + servings;
+        document.getElementById("cooking-time").innerHTML = "<i class = 'fa-solid fa-stopwatch'></i> Ready in " + cookingTime + "mins";
+        document.getElementById("servings").innerHTML = "<i class = 'fa-solid fa-utensils'></i> Serves " + servings;
         // display recipe image in a card
         var card = document.createElement("div");
         card.setAttribute("class", "card w-100");
