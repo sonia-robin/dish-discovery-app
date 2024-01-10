@@ -84,6 +84,8 @@ function displayRecipe (idsPar, apiKeyPar){
             for (var i = 0; i < data.length; i++){
                 var recipeTitle = data[i].title;
                 var recipeImg = data[i].image;
+                var cookingTime = data[i].readyInMinutes
+                var servings = data[i].servings;
                 // Create column div
                 var colDiv = document.createElement("div");
                 colDiv.setAttribute("class", "col");
@@ -111,7 +113,30 @@ function displayRecipe (idsPar, apiKeyPar){
                 cardTitle.setAttribute("class", "card-title");
                 cardTitle.textContent = recipeTitle;
                 cardBody.appendChild(cardTitle);
+                // Footer
+                var cardFooter = document.createElement("div");
+                cardFooter.setAttribute("class", "card-footer bg-body");
+                cardDiv.appendChild(cardFooter);
+                var timeIconDiv = document.createElement("div");
+                timeIconDiv.setAttribute ("class", "position")
+                cardFooter.appendChild(timeIconDiv)
+                var timeIcon = document.createElement("i");
+                timeIcon.setAttribute("class", "fa-solid fa-stopwatch");
+                timeIconDiv.appendChild(timeIcon);
+                var timeText = document.createElement("span");
+                timeText.textContent = " " + cookingTime;
+                timeIconDiv.appendChild(timeText)
+                var servIconDiv = document.createElement("div");
+                cardFooter.appendChild(servIconDiv)
+                var servingIcon = document.createElement("i");
+                servingIcon.setAttribute("class", "fa-solid fa-utensils");
+                servIconDiv.setAttribute ("class", "position")
+                servIconDiv.appendChild(servingIcon);
+                var servingText = document.createElement("span");
+                servingText.textContent = " " + servings;
+                servIconDiv.appendChild(servingText);
                 }
+
     })
     .catch(function(error) {
         console.error('Error fetching data:', error);
@@ -161,7 +186,7 @@ function displayYouTubeResults (searchPar, dietPar, apiKeyPar){
     iconEl.setAttribute("class", "icon-overlay");
     imgIconEl.appendChild(iconEl);
     var icon = document.createElement("i");
-    icon.setAttribute("class", "fa fa-youtube-play");
+    icon.setAttribute("class", "fa-brands fa-youtube");
     iconEl.appendChild(icon);
 
     // create card body el, set class, append to card div
