@@ -60,6 +60,24 @@ footer {
     cursor: pointer;
 }
 
+.modal-body button {
+    margin: 0px;
+    background: rgb(14, 146, 82);
+    outline: none;
+    border: none;
+    color: #F6F6F6;
+    padding: 6px 18px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.modal-body ul {
+    list-style: none;
+    padding-left: 0px;
+}
+
+
 /* form section starts from here */
 .form.form-control {
     margin: 30px;
@@ -109,14 +127,6 @@ footer {
     margin-left: -11%;
     margin-right: -10%;
     margin-top: -5%;
-}
-
-.custom-width-recipe {
-    width: 122%;
-    margin-left: -11%;
-    margin-right: -10%;
-    margin-top: -5%;
-    margin-bottom: -5%;
 }
 
 /* cards class section styling */
