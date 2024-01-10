@@ -53,7 +53,7 @@
         <input class="form-control" id="keyword" type="text" placeholder="Search" aria-label="Search" required>
       </div>
      <!-- check buttons for filters -->
-      <div class="form-group">
+      <div class="mt-3 form-group">
         <label for="filter-diets" id="filter-diets">Filter by Diets:</label>
       </div>
       <div class="form-check form-check-inline">
@@ -64,44 +64,32 @@
         <input class="form-check-input" type="checkbox" id="vegetarian" name="dietary" value="vegetarian">
         <label class="form-check-label" for="vegetarian">Vegetarian</label>
       </div>
-      <div class="form-group">
-        <label for="filter-allergies" id="filter-allergies">Filter by Allergies:</label>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="gluten-free" name="dietary" value="gluten-free">
+        <label class="form-check-label" for="gluten-free">Gluten-Free</label>
+      </div>
+      <div class="mt-3 form-group">
+        <label for="filter-cuisine" id="filter-cuisine">Filter by Cuisine:</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="gluten" name="allergies" value="gluten">
-        <label class="form-check-label" for="gluten">Gluten-Free</label>
+        <input class="form-check-input" type="checkbox" id="chinese" name="cuisine" value="chinese">
+        <label class="form-check-label" for="chinese">Chinese</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="egg" name="allergies" value="egg">
-        <label class="form-check-label" for="egg">Egg-Free</label>
+        <input class="form-check-input" type="checkbox" id="thai" name="cuisine" value="thai">
+        <label class="form-check-label" for="thai">Thai</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="tree-nut" name="allergies" value="tree-nut">
-        <label class="form-check-label" for="tree-nut">Tree Nut-Free</label>
+        <input class="form-check-input" type="checkbox" id="italian" name="cuisine" value="italian">
+        <label class="form-check-label" for="italian">Italian</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="peanut" name="allergies" value="peanut">
-        <label class="form-check-label" for="peanut">Peanut-Free</label>
+        <input class="form-check-input" type="checkbox" id="greek" name="cuisine" value="greek">
+        <label class="form-check-label" for="greek">Greek</label>
       </div>
       <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="seafood" name="allergies" value="seafood">
-        <label class="form-check-label" for="seafood">Seafood-Free</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="dairy" name="allergies" value="dairy">
-        <label class="form-check-label" for="dairy">Dairy-Free</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="sesame" name="allergies" value="sesame">
-        <label class="form-check-label" for="sesame">Sesame-Free</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="wheat" name="allergies" value="wheat">
-        <label class="form-check-label" for="wheat">Wheat-Free</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="soy" name="allergies" value="soy">
-        <label class="form-check-label" for="soy">Soy-Free</label>
+        <input class="form-check-input" type="checkbox" id="indian" name="cuisine" value="indian">
+        <label class="form-check-label" for="indian">Indian</label>
       </div>
         <!-- submit button -->
       <div class="form-group">
@@ -111,11 +99,11 @@
     </form>
   </div>
 
-  <!-- spoonacular api responses -->
+  <!-- api responses -->
   <div class="container">
+    <!-- spoonacular api responses -->
     <div id="spoonacular-api" class="row row-cols-1 row-cols-md-3 row-cols-lg-6 g-4 mt-2">
     </div>
-
   <!-- youtube api responses -->
     <div id="youtube-api" class="row row-cols-1 row-cols-md-3 row-cols-lg-6 g-4 mt-2">
     </div>
@@ -127,8 +115,6 @@
       <p class="text-center text-body-secondary">&copy; 2024 Arrays of CALC</p>
     </footer>
   </div>
-
-
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
