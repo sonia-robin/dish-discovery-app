@@ -27,10 +27,7 @@ document
       diet.push(checkbox.value);
     });
     checkedCuisine.forEach(function (checkbox) {
-      var labelFor = checkbox.getAttribute("id");
-      if (labelFor) {
-        cuisine.push(labelFor);
-      }
+        cuisine.push(checkbox.value);
     });
     // Call fetch recipe function, diet and cuisine pass as parameters
     fetchRecipeId(searchInput, diet, cuisine, apiKeyF);
@@ -44,10 +41,11 @@ function fetchRecipeId(searchPar, dietPar, cuisinePar, apiKeyPar) {
     searchPar +
     "&number=1&diet=" +
     dietPar +
-    "&intolerances=" +
+    "&cuisine=" +
     cuisinePar +
     "&instructionsRequired=true&apiKey=" +
     apiKeyPar;
+    console.log(queryUrl);
   var recipeId = [];
   fetch(queryUrl)
     .then(function (response) {
@@ -167,9 +165,11 @@ function displayYouTubeResults(searchPar, dietPar, cuisinePar, apiKeyPar) {
     "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=" +
     searchPar +
     "+" +
-    dietPar +
+    dietPar + "+" + cuisinePar +
     "+recipe&key=" +
     apiKeyPar;
+
+    console.log(queryURL);
 
   fetch(queryURL)
     .then(function (response) {
