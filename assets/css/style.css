@@ -39,11 +39,29 @@ footer {
     color: #F6F6F6 !important;
 }
 
+.modal {
+    height: 400px; 
+    overflow: auto; 
+  }
+
+.search-history, .modal-button {
+    margin: 0px;
+    background: #FFBD59;
+    outline: none;
+    border: none;
+    color: #F6F6F6;
+    padding: 6px 18px; 
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+  }
+
 .form.form-control {
     margin: 30px;
 }
 
-.btn {
+.submit-button {
     margin: 30px;
     background: #FFBD59;
     outline: none;
@@ -92,7 +110,10 @@ footer {
     margin-top: -5%;
     margin-bottom: -5%;
 }
-
+.card-footer {
+    justify-content: space-between;
+    display: flex;
+  }
 #main-section {
     display: flex;
     flex-direction: column;
@@ -106,23 +127,16 @@ footer {
 }
 
 #filter-diets,
-#filter-allergies {
+#filter-cuisine {
     color: #0E9252;
     margin: 10px 0 18px 0;
-}
-
-#recipe-List {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding-top: 20px;
-    padding-left: 20px;
 }
 
 #recipe-info ul{
     list-style: none;
     padding-left: 0px;
 }
+
 #recipe-info li {
     margin: 0.3em 0;
 }
