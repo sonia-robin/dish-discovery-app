@@ -1,12 +1,12 @@
 //Selectors
 var keywordInput = document.querySelector("#keyword");
 var dietaryCheckboxes = document.querySelectorAll("input[name=dietary]");
-var allergiesCheckboxes = document.querySelectorAll("input[name=allergies]");
+var cuisineCheckboxes = document.querySelectorAll("input[name=cuisine]");
 
 // Retrieve saved values from local storage
 var savedKeyword = localStorage.getItem("keyword");
 var savedDietary = JSON.parse(localStorage.getItem("dietary"));
-var savedAllergies = JSON.parse(localStorage.getItem("allergies"));
+var savedCuisine = JSON.parse(localStorage.getItem("cuisine"));
 
 // Set values
 keywordInput.value = savedKeyword;
@@ -16,8 +16,8 @@ dietaryCheckboxes.forEach(function (checkbox) {
   checkbox.checked = savedDietary && savedDietary.includes(checkbox.value);
 });
 
-allergiesCheckboxes.forEach(function (checkbox) {
-  checkbox.checked = savedAllergies && savedAllergies.includes(checkbox.value);
+cuisineCheckboxes.forEach(function (checkbox) {
+  checkbox.checked = savedCuisine && savedCuisine.includes(checkbox.value);
 });
 
 // Save user input to local storage when the form is submitted
@@ -36,10 +36,10 @@ document
       }
     });
 
-    var allergiesValues = [];
-    allergiesCheckboxes.forEach(function (checkbox) {
+    var cuisineValues = [];
+    cuisineCheckboxes.forEach(function (checkbox) {
       if (checkbox.checked) {
-        allergiesValues.push(checkbox.value);
+        cuisineValues.push(checkbox.value);
       }
     });
 
@@ -47,7 +47,7 @@ document
     var recipeValues = {
       keyword: keywordValue,
       dietary: dietaryValues,
-      allergies: allergiesValues,
+      cuisine: cuisineValues,
     };
 
     // Create a unique key using the current timestamp
@@ -74,7 +74,7 @@ document
           if (recipeValues) {
             var keywordValue = recipeValues.keyword;
             var dietaryValues = recipeValues.dietary;
-            var allergiesValues = recipeValues.allergies;
+            var cuisineValues = recipeValues.cuisine;
 
             // Create content for each saved recipe
             var modalContent =
@@ -83,9 +83,9 @@ document
               "</button>" +
               "<ul> <li>Dietary Restrictions: " +
               dietaryValues.join(", ") +
-              "</li>" +
-              "<li>Allergies: " +
-              allergiesValues.join(", ") +
+              "</li>" + 
+              "<li>Cuisine: " +
+              cuisineValues.join(", ") +
               "</li> </ul>";
 
             // Append the content to the modal body
