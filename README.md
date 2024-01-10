@@ -4,13 +4,15 @@
 # Dish Discovery App
 
 ## Introduction
-Imagine finding the perfect meal in an easy, fuss-free way, tailored to your preferences. Dish Discovery App transforms the way you explore tasty food by allowing you to search for recipes based on your specific wants and dietary needs. With a user-intuitive interface, simply enter your search and dietary preferences, and presto! You'll be presented with a curated selection of mouthwatering recipes, each featuring an inviting picture, ingredient list, and step-by-step instructions for hassle-free cooking. But that's not all, we take your experience to the next level by integrating curated YouTube videos alongside each recipe, ensuring your dish turns out perfect every time. Make mealtime fun again with Dish Discovery App – where creativity meets functionality, and every meal is hussle-free.
+Imagine finding the perfect meal in an easy, fuss-free way, tailored to your preferences. Our application transforms the way you explore tasty food by allowing you to search for recipes based on your specific wants and cuisine. With a user-intuitive interface, simply enter your search query and dietary preferences, and presto! You'll be presented with a curated selection of 6 mouth-watering recipes, each featuring an inviting picture, ingredient list, and step-by-step instructions for hassle-free cooking. But that's not all, we take your experience to the next level by recommending YouTube videos alongside each recipe for even more ideas. 
+Make mealtime fun again with our application – where creativity meets functionality, and every meal is hassle-free.
+
 
 ![Screenshot](./assets/logo/dish-discovery-screenshot.png)
 
 ## Usage 
 🔍 Search & Choose: 
-Type in your cravings and dietary needs. 
+Type in your cravings and choose the cuisine. 
 Our app serves up 6 recipes that match your every whim. 
 Each recipe is a clickable card.
 👩‍🍳 Cooking Journey: 
@@ -48,9 +50,12 @@ Distributed under the MIT License, See LICENSE.txt for more info.
 [Google Fonts](https://fonts.google.com),
 [Figma](https://www.figma.com),
 [Canva](https://www.canva.com),
+[Font Awesome](https://fontawesome.com/).
+[MDN](https://developer.mozilla.org/en-US/)
 
 
 ## Contributing
 If you have any suggestions or improvements, feel free to open an [issue](https://github.com/sonia-robin/dish-discovery-app/issues) or create a [pull request](https://github.com/sonia-robin/dish-discovery-app/pulls). Contributions are welcome!
 
 Enjoy Dish Discovery App. If you have any questions or need help, don't hesitate to reach out. Happy coding!
+
