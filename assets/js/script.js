@@ -129,30 +129,4 @@ function displayRecipe (idsPar, apiKeyPar){
 }
 
   
-//   fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${searchInput}&apiKey=${apiKey}`)
-
-//       .then(function(response) {
-//           return response.json();
-//       })
-//       .then(function(data) {
-//           if (data.results) {
-//               data.results.slice(0, 6).forEach(function(recipe) {
-//                   var recipeItem = document.createElement('div');
-//                   recipeItem.inne `
-
-//                   <h3>${recipe.title}</h3>
-//                   <p>ID: ${recipe.id}</p>
-//                   <img src="${recipe.image}" alt="${recipe.title}" style="max-width: 100%; height: auto;">
-//               `;rHTML =
-//                   recipeListContainer.appendChild(recipeItem);
-//               });
-//           } else {
-//               recipeListContainer.innerHTML = 'No recipes found.';
-//           }
-//       })
-//       .catch(function(error) {
-//           console.error('Error fetching data:', error);
-//           recipeListContainer.innerHTML = 'Error fetching recipes. Please try again later.';
-//       });
-
 
