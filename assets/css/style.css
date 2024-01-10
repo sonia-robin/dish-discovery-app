@@ -1,6 +1,7 @@
-/* === Google Font - Poppins === */
+/* === Google Font - Poppins === this fonts will be used throughout the application */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+/* this will be the basic style unless it's specified */
 * {
     margin: 0px;
     padding: 0;
@@ -30,6 +31,7 @@ footer {
     font-size: smaller;
 }
 
+/* this colour overrides any other tyle. */
 .navbar {
     background-color: rgb(14, 146, 82) !important;
 
@@ -39,24 +41,26 @@ footer {
     color: #F6F6F6 !important;
 }
 
+/* search history modal class section starts from here */
 .modal {
-    height: 400px; 
-    overflow: auto; 
-  }
+    height: 400px;
+    overflow: auto;
+}
 
-.search-history, .modal-button {
+.search-history,
+.modal-button {
     margin: 0px;
     background: #FFBD59;
     outline: none;
     border: none;
     color: #F6F6F6;
-    padding: 6px 18px; 
+    padding: 6px 18px;
     border-radius: 20px;
     transition: all 0.3s ease;
     cursor: pointer;
+}
 
-  }
-
+/* form section starts from here */
 .form.form-control {
     margin: 30px;
 }
@@ -73,11 +77,13 @@ footer {
     cursor: pointer;
 }
 
+/* this will used by both main search and search history */
 .btn:hover {
     color: white;
     background: #FF5757;
 }
 
+/* search result class starts from here */
 .recipe-item {
     border: 1px solid #ccc;
     padding: 10px;
@@ -97,12 +103,14 @@ footer {
 .center-container {
     position: relative;
 }
+
 .custom-width {
     width: 122%;
     margin-left: -11%;
     margin-right: -10%;
     margin-top: -5%;
 }
+
 .custom-width-recipe {
     width: 122%;
     margin-left: -11%;
@@ -110,29 +118,36 @@ footer {
     margin-top: -5%;
     margin-bottom: -5%;
 }
+
+/* cards class section styling */
 .card-footer {
     justify-content: space-between;
     display: flex;
-  }
+}
+
+/* main id section styling */
 #main-section {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* search and filter section starts from here */
 #keyword {
     margin: 0 auto;
     width: 400px;
     border-radius: 20px;
 }
 
+/* filter id section starts from here */
 #filter-diets,
 #filter-cuisine {
     color: #0E9252;
     margin: 10px 0 18px 0;
 }
 
-#recipe-info ul{
+/* search result's styling */
+#recipe-info ul {
     list-style: none;
     padding-left: 0px;
 }
