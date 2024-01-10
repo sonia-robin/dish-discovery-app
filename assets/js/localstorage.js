@@ -76,6 +76,15 @@ document
             var dietaryValues = recipeValues.dietary;
             var cuisineValues = recipeValues.cuisine;
 
+            if (!keywordValue) {
+              keywordValue = "none";
+            }
+            if (dietaryValues.length === 0) {
+              dietaryValues = ["none"];
+            }
+            if (cuisineValues.length === 0) {
+              cuisineValues = ["none"];
+            }
             // Create content for each saved recipe
             var modalContent =
               "<button type='button'>" +
@@ -83,7 +92,7 @@ document
               "</button>" +
               "<ul> <li>Dietary Restrictions: " +
               dietaryValues.join(", ") +
-              "</li>" + 
+              "</li>" +
               "<li>Cuisine: " +
               cuisineValues.join(", ") +
               "</li> </ul>";
