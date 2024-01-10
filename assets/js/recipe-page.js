@@ -7,7 +7,7 @@ var apiKeyS = "5f91a7deb5df4f2db6a1138caa6d3e5f"
 
 console.log(recipeIdUrl);
 
-var queryUrlRecipeInfo = "https://api.spoonacular.com/recipes/" + recipeIdUrl + "/information?includeNutrition=false&apiKey=" + apiKeyS;
+var queryUrlRecipeInfo = "https://api.spoonacular.com/recipes/" + recipeIdUrl + "/information?includeNutrition=false&apiKey=" + apiKeyF;
 
 fetch(queryUrlRecipeInfo)
     .then(function(response) {
