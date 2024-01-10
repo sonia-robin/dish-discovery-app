@@ -30,7 +30,7 @@ document
         cuisine.push(checkbox.value);
     });
     // Call fetch recipe function, diet and cuisine pass as parameters
-    fetchRecipeId(searchInput, diet, cuisine, apiKeySona);
+    fetchRecipeId(searchInput, diet, cuisine, apiKey);
     displayYouTubeResults(searchInput, diet, cuisine, apiKeyYT);
   });
 
@@ -57,7 +57,7 @@ function fetchRecipeId(searchPar, dietPar, cuisinePar, apiKeyPar) {
           recipeId.push(data.results[i].id);
         }
         // Call display recipe function, pass recipe IDs as parameter
-        displayRecipe(recipeId, apiKeySona);
+        displayRecipe(recipeId, apiKey);
         // If no results found, display an error
       } else {
         recipeListContainer.innerHTML = "No recipes found.";
