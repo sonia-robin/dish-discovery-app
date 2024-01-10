@@ -111,18 +111,11 @@ footer {
     margin: 10px 0 18px 0;
 }
 
-#recipe-List {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding-top: 20px;
-    padding-left: 20px;
-}
-
 #recipe-info ul{
     list-style: none;
     padding-left: 0px;
 }
+
 #recipe-info li {
     margin: 0.3em 0;
 }
