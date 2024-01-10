@@ -6,7 +6,19 @@
 ## Introduction
 Imagine finding the perfect meal in an easy, fuss-free way, tailored to your preferences. Dish Discovery App transforms the way you explore tasty food by allowing you to search for recipes based on your specific wants and dietary needs. With a user-intuitive interface, simply enter your search and dietary preferences, and presto! You'll be presented with a curated selection of mouthwatering recipes, each featuring an inviting picture, ingredient list, and step-by-step instructions for hassle-free cooking. But that's not all, we take your experience to the next level by integrating curated YouTube videos alongside each recipe, ensuring your dish turns out perfect every time. Make mealtime fun again with Dish Discovery App – where creativity meets functionality, and every meal is hussle-free.
 
-[Screenshot](https://github.com/sonia-robin/dish-discovery-app/assets/dish-discovery-screenshot)
+![Screenshot](./assets/logo/dish-discovery-screenshot.png)
+
+## Usage 
+🔍 Search & Choose: 
+Type in your cravings and dietary needs. 
+Our app serves up 6 recipes that match your every whim. 
+Each recipe is a clickable card.
+👩‍🍳 Cooking Journey: 
+Click the card to discover cooking time, servings, ingredients & step-by-step instructions.
+🎥 Culinary Cinema: 
+ Below the recipes, a clickable treasure trove of YouTube videos awaits. 
+📚 Search Memory Lane: 
+Worried about forgetting your favourites? Fear not, the search history is saved in local storage, accessible from the navbar.
 
 ## Usage 
 🔍 Search & Choose: 
