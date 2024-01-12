@@ -1,9 +1,6 @@
 var urlParams = new URLSearchParams(window.location.search);
-var recipeIdUrl = urlParams.get('recipe-id');
-var recipeSection = document.getElementById("recipe-info")
-var apiKeySona = "f197b6604aa242d3bf1aa8e74d25e259";
-var apiKeyF = "8f932f55cd354bf89c0d697bb2662998";
-var apiKeyS = "5f91a7deb5df4f2db6a1138caa6d3e5f";
+var recipeIdUrl = urlParams.get("recipe-id");
+var recipeSection = document.querySelector("#recipe-info")
 var apiKey = "08cce16bdc354b6aa373715c0843bfc8";
 
 var queryUrlRecipeInfo = "https://api.spoonacular.com/recipes/" + recipeIdUrl + "/information?includeNutrition=false&apiKey=" + apiKey;
@@ -17,13 +14,13 @@ fetch(queryUrlRecipeInfo)
         var recipeTitle = data.title;
         var cookingTime = data.readyInMinutes;
         var servings = data.servings;
-        document.getElementById("recipe-title").textContent = recipeTitle;
-        document.getElementById("cooking-time").innerHTML = "<i class = 'fa-solid fa-stopwatch'></i> Ready in " + cookingTime + "mins";
-        document.getElementById("servings").innerHTML = "<i class = 'fa-solid fa-utensils'></i> Serves " + servings;
+        document.querySelector("#recipe-title").textContent = recipeTitle;
+        document.querySelector("#cooking-time").innerHTML = "<i class = 'fa-solid fa-stopwatch'></i> Ready in " + cookingTime + "mins";
+        document.querySelector("#servings").innerHTML = "<i class = 'fa-solid fa-utensils'></i> Serves " + servings;
         // display recipe image in a card
         var card = document.createElement("div");
         card.setAttribute("class", "card w-100");
-        document.getElementById("image").appendChild(card);
+        document.querySelector("#image").appendChild(card);
         var recipeImg = data.image;
         var recipeImgEl = document.createElement("img");
         recipeImgEl.setAttribute("src", recipeImg);
@@ -32,22 +29,22 @@ fetch(queryUrlRecipeInfo)
         card.style.overflow = "hidden";
         card.appendChild(recipeImgEl);
         // display ingredients and instructions
-        document.getElementById("ingr-header").textContent = "Ingredients";
-        document.getElementById("instr-header").textContent = "Instructions";
+        document.querySelector("#ingr-header").textContent = "Ingredients";
+        document.querySelector("#instr-header").textContent = "Instructions";
         for (var i = 0; i < data.extendedIngredients.length; i++){
             var ingredient = data.extendedIngredients[i].original
             var li = document.createElement("li");
             li.textContent = ingredient;
-            document.getElementById("ingr-list").appendChild(li);
+            document.querySelector("#ingr-list").appendChild(li);
         }
         for (var i = 0; i < data.analyzedInstructions[0].steps.length; i++){
             var step = data.analyzedInstructions[0].steps[i].step;
             var li = document.createElement("li");
             li.textContent = step;
-            document.getElementById("instr-list").appendChild(li);
+            document.querySelector("#instr-list").appendChild(li);
         }
         
     })
     .catch(function(error) {
-        console.error('Error fetching data:', error);
+        console.error("Error fetching data:", error);
     })

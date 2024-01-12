@@ -1,18 +1,15 @@
 // Global variables
 var apiKey = "08cce16bdc354b6aa373715c0843bfc8";
-var apiKeySona = "f197b6604aa242d3bf1aa8e74d25e259";
-var apiKeyS = "5f91a7deb5df4f2db6a1138caa6d3e5f";
-var apiKeyF = "8f932f55cd354bf89c0d697bb2662998";
 var apiKeyYT = "AIzaSyBz2fXaCNuTho3B_k-OLJpoMlLzrnw7KfA";
-var recipeListContainer = document.getElementById("spoonacular-api");
+var spoonaDiv = document.querySelector("#spoonacular-api");
 var youTubeDiv = document.querySelector("#youtube-api");
 
 // Add event listener when form submitted
 document
-  .getElementById("recipe-form")
+  .querySelector("#recipe-form")
   .addEventListener("submit", function (event) {
     event.preventDefault();
-    var searchInput = document.getElementById("keyword").value;
+    var searchInput = document.querySelector("#keyword").value;
     var diet = [];
     var cuisine = [];
     // Select all checked dietary and cuisine requirements
@@ -60,12 +57,12 @@ function fetchRecipeId(searchPar, dietPar, cuisinePar, apiKeyPar) {
         displayRecipe(recipeId, apiKey);
         // If no results found, display an error
       } else {
-        recipeListContainer.innerHTML = "No recipes found.";
+        spoonaDiv.innerHTML = "No recipes found.";
       }
     })
     .catch(function (error) {
       console.error("Error fetching data:", error);
-      recipeListContainer.innerHTML =
+      spoonaDiv.innerHTML =
         "Error fetching recipes. Please try again later.";
     });
   return recipeId;
@@ -85,10 +82,10 @@ function displayRecipe(idsPar, apiKeyPar) {
     })
     .then(function (data) {
       // Empty section first
-      recipeListContainer.textContent = "";
+      spoonaDiv.textContent = "";
       // Display results in 6 bootsrap cards
       for (var i = 0; i < data.length; i++) {
-        var link = `./recipe.html?recipe-id=${data[i].id}`;
+        var link = "./recipe.html?recipe-id=" + data[i].id;
         var recipeTitle = data[i].title;
         var recipeImg = data[i].image;
         var cookingTime = data[i].readyInMinutes;
@@ -97,7 +94,7 @@ function displayRecipe(idsPar, apiKeyPar) {
         isSpoona = true;
         isYT = false;
         createBootstrapCard(
-          recipeListContainer,
+          spoonaDiv,
           link,
           recipeTitle,
           isYT,
@@ -111,7 +108,7 @@ function displayRecipe(idsPar, apiKeyPar) {
     })
     .catch(function (error) {
       console.error("Error fetching data:", error);
-      recipeListContainer.innerHTML =
+      spoonaDiv.innerHTML =
         "Error fetching recipes. Please try again later.";
     });
 }
