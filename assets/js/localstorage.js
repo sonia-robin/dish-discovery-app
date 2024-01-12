@@ -43,19 +43,23 @@ document
       }
     });
 
-    // Save the values to local storage
-    var recipeValues = {
-      keyword: keywordValue,
-      dietary: dietaryValues,
-      cuisine: cuisineValues,
-    };
+    function saveToLocalStorage() {
+      // Save the values to local storage
+      var recipeValues = {
+        keyword: keywordValue,
+        dietary: dietaryValues,
+        cuisine: cuisineValues,
+      };
 
-    // Create a unique key using the current timestamp
-    var timestamp = new Date().getTime();
-    var key = "recipe-" + timestamp;
+      // Create a unique key using the current timestamp
+      var timestamp = new Date().getTime();
+      var key = "recipe-" + timestamp;
 
-    // Save the recipe values to local storage with the unique key
-    localStorage.setItem(key, JSON.stringify(recipeValues));
+      // Save the recipe values to local storage with the unique key
+      localStorage.setItem(key, JSON.stringify(recipeValues));
+    }
+    // Call the function
+    saveToLocalStorage();
 
     // Function to display all search results in the modal
     function displaySearchResults() {
