@@ -27,7 +27,7 @@ document
       diet.push(checkbox.value);
     });
     checkedCuisine.forEach(function (checkbox) {
-        cuisine.push(checkbox.value);
+      cuisine.push(checkbox.value);
     });
     // Call fetch recipe function, diet and cuisine pass as parameters
     fetchRecipeId(searchInput, diet, cuisine, apiKey);
@@ -86,65 +86,27 @@ function displayRecipe(idsPar, apiKeyPar) {
     .then(function (data) {
       // Empty section first
       recipeListContainer.textContent = "";
-
-      // Display image and title in Bootstrap cards
+      // Display results in 6 bootsrap cards
       for (var i = 0; i < data.length; i++) {
+        var link = `./recipe.html?recipe-id=${data[i].id}`;
         var recipeTitle = data[i].title;
         var recipeImg = data[i].image;
         var cookingTime = data[i].readyInMinutes;
         var servings = data[i].servings;
-        // Create column div
-        var colDiv = document.createElement("div");
-        colDiv.setAttribute("class", "col");
-        recipeListContainer.appendChild(colDiv);
-        // Create a link element, set Bootsrap class card, append
-        // This card will link to a new page with a related recipe
-        var cardDiv = document.createElement("a");
-        cardDiv.setAttribute("href", `./recipe.html?recipe-id=${data[i].id}`);
-        cardDiv.setAttribute("target", "blank");
-        cardDiv.setAttribute(
-          "class",
-          "card h-100 link-underline link-underline-opacity-0 p-0"
+        var YtImg;
+        isSpoona = true;
+        isYT = false;
+        createBootstrapCard(
+          recipeListContainer,
+          link,
+          recipeTitle,
+          isYT,
+          isSpoona,
+          YtImg,
+          recipeImg,
+          cookingTime,
+          servings
         );
-        cardDiv.style.overflow = "hidden";
-        colDiv.appendChild(cardDiv);
-        // Create img element and set class and src, append to card div
-        var imgEl = document.createElement("img");
-        imgEl.setAttribute("class", "card-img-top custom-width");
-        imgEl.setAttribute("src", recipeImg);
-        imgEl.setAttribute("alt", "recipe-image");
-        cardDiv.appendChild(imgEl);
-        // Create card body el, set class, append to card div
-        var cardBody = document.createElement("div");
-        cardBody.setAttribute("class", "card-body");
-        cardDiv.append(cardBody);
-        // Create title el, append
-        var cardTitle = document.createElement("h6");
-        cardTitle.setAttribute("class", "card-title");
-        cardTitle.textContent = recipeTitle;
-        cardBody.appendChild(cardTitle);
-        // Footer
-        var cardFooter = document.createElement("div");
-        cardFooter.setAttribute("class", "card-footer bg-body");
-        cardDiv.appendChild(cardFooter);
-        var timeIconDiv = document.createElement("div");
-        timeIconDiv.setAttribute("class", "position");
-        cardFooter.appendChild(timeIconDiv);
-        var timeIcon = document.createElement("i");
-        timeIcon.setAttribute("class", "fa-solid fa-stopwatch");
-        timeIconDiv.appendChild(timeIcon);
-        var timeText = document.createElement("span");
-        timeText.textContent = " " + cookingTime;
-        timeIconDiv.appendChild(timeText);
-        var servIconDiv = document.createElement("div");
-        cardFooter.appendChild(servIconDiv);
-        var servingIcon = document.createElement("i");
-        servingIcon.setAttribute("class", "fa-solid fa-utensils");
-        servIconDiv.setAttribute("class", "position");
-        servIconDiv.appendChild(servingIcon);
-        var servingText = document.createElement("span");
-        servingText.textContent = " " + servings;
-        servIconDiv.appendChild(servingText);
       }
     })
     .catch(function (error) {
@@ -161,10 +123,11 @@ function displayYouTubeResults(searchPar, dietPar, cuisinePar, apiKeyPar) {
     "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=6&q=" +
     searchPar +
     "+" +
-    dietPar + "+" + cuisinePar +
+    dietPar +
+    "+" +
+    cuisinePar +
     "+recipe&key=" +
     apiKeyPar;
-
 
   fetch(queryURL)
     .then(function (response) {
@@ -173,52 +136,21 @@ function displayYouTubeResults(searchPar, dietPar, cuisinePar, apiKeyPar) {
     .then(function (data) {
       // empty YouTube section first
       youTubeDiv.textContent = "";
-      
-        // retrieve video ID (needed to create a link), title, thumbnail
-        for (var i = 0; i < data.items.length; i++) {
-          var videoId = data.items[i].id.videoId;
-          var titleVideo = replaceHtmlEntity(data.items[i].snippet.title);
-          var thumbnailImg = data.items[i].snippet.thumbnails.medium.url;
-          // create column div
-          var colDiv = document.createElement("div");
-          colDiv.setAttribute("class", "col");
-          youTubeDiv.appendChild(colDiv);
-          // create card div element which is a link to YouTube video and set bootsrap class card, append
-          var cardDiv = document.createElement("a");
-          cardDiv.setAttribute("href", baseSearchUrl + videoId);
-          cardDiv.setAttribute("target", "blank");
-          cardDiv.setAttribute(
-            "class",
-            "card h-100 link-underline link-underline-opacity-0 p-0"
-          );
-          colDiv.appendChild(cardDiv);
-          // create img element and set class and src, append to card div
-          var imgIconEl = document.createElement("div");
-          imgIconEl.setAttribute("class", "center-container");
-          cardDiv.appendChild(imgIconEl);
-          var imgEl = document.createElement("img");
-          imgEl.setAttribute("class", "card-img-top");
-          imgEl.setAttribute("src", thumbnailImg);
-          imgEl.setAttribute("alt", "thumbnail");
-          imgIconEl.appendChild(imgEl);
-          var iconEl = document.createElement("div");
-          iconEl.setAttribute("class", "icon-overlay");
-          imgIconEl.appendChild(iconEl);
-          var icon = document.createElement("i");
-          icon.setAttribute("class", "fa-brands fa-youtube");
-          iconEl.appendChild(icon);
-
-          // create card body el, set class, append to card div
-          
-          var cardBody = document.createElement("div");
-          cardBody.setAttribute("class", "card-body");
-          cardDiv.append(cardBody);
-          // create title el
-          var cardTitle = document.createElement("h6");
-          cardTitle.setAttribute("class", "card-title text-center");
-          cardTitle.textContent = titleVideo;
-          cardBody.appendChild(cardTitle);
-        
+      // Display results in 6 bootsrap cards
+      for (var i = 0; i < data.items.length; i++) {
+        var videoId = data.items[i].id.videoId;
+        var titleVideo = replaceHtmlEntity(data.items[i].snippet.title);
+        var thumbnailImg = data.items[i].snippet.thumbnails.medium.url;
+        isSpoona = false;
+        isYT = true;
+        createBootstrapCard(
+          youTubeDiv,
+          baseSearchUrl + videoId,
+          titleVideo,
+          isYT,
+          isSpoona,
+          thumbnailImg
+        );
       }
     });
 }
@@ -230,4 +162,89 @@ function replaceHtmlEntity(str) {
     .replace(/&lt;/g, "<")
     .replace(/&gt;/g, ">")
     .replace(/&#39;/g, "'");
+}
+
+// Function to create a Bootsrap card
+function createBootstrapCard(
+  sectionDiv,
+  linkPar,
+  titlePar,
+  isYT,
+  isSpoona,
+  YtImgPar,
+  recipeImgPar,
+  cookingTimePar,
+  servingsPar
+) {
+  // Create a col div and append to section div
+  var colDiv = document.createElement("div");
+  colDiv.setAttribute("class", "col");
+  sectionDiv.appendChild(colDiv);
+  // create card div element which is a link and set bootsrap class card, append
+  var cardDiv = document.createElement("a");
+  cardDiv.setAttribute("href", linkPar);
+  cardDiv.setAttribute("target", "blank");
+  cardDiv.setAttribute(
+    "class",
+    "card h-100 link-underline link-underline-opacity-0 p-0"
+  );
+  cardDiv.style.overflow = "hidden";
+  colDiv.appendChild(cardDiv);
+  if (isYT) {
+    // create img element and set class and src, append to card div
+    var imgIconEl = document.createElement("div");
+    imgIconEl.setAttribute("class", "center-container");
+    cardDiv.appendChild(imgIconEl);
+    var imgEl = document.createElement("img");
+    imgEl.setAttribute("class", "card-img-top");
+    imgEl.setAttribute("src", YtImgPar);
+    imgEl.setAttribute("alt", "thumbnail");
+    imgIconEl.appendChild(imgEl);
+    var iconEl = document.createElement("div");
+    iconEl.setAttribute("class", "icon-overlay");
+    imgIconEl.appendChild(iconEl);
+    var icon = document.createElement("i");
+    icon.setAttribute("class", "fa-brands fa-youtube");
+    iconEl.appendChild(icon);
+  }
+  if (isSpoona) {
+    var imgEl = document.createElement("img");
+    imgEl.setAttribute("class", "card-img-top custom-width");
+    imgEl.setAttribute("src", recipeImgPar);
+    imgEl.setAttribute("alt", "recipe-image");
+    cardDiv.appendChild(imgEl);
+  }
+  // Create card body el, set class, append to card div
+  var cardBody = document.createElement("div");
+  cardBody.setAttribute("class", "card-body");
+  cardDiv.append(cardBody);
+  // Create title el
+  var cardTitle = document.createElement("h6");
+  cardTitle.setAttribute("class", "card-title text-center");
+  cardTitle.textContent = titlePar;
+  cardBody.appendChild(cardTitle);
+  if (isSpoona) {
+    // Footer
+    var cardFooter = document.createElement("div");
+    cardFooter.setAttribute("class", "card-footer bg-body");
+    cardDiv.appendChild(cardFooter);
+    var timeIconDiv = document.createElement("div");
+    timeIconDiv.setAttribute("class", "position");
+    cardFooter.appendChild(timeIconDiv);
+    var timeIcon = document.createElement("i");
+    timeIcon.setAttribute("class", "fa-solid fa-stopwatch");
+    timeIconDiv.appendChild(timeIcon);
+    var timeText = document.createElement("span");
+    timeText.textContent = " " + cookingTimePar;
+    timeIconDiv.appendChild(timeText);
+    var servIconDiv = document.createElement("div");
+    cardFooter.appendChild(servIconDiv);
+    var servingIcon = document.createElement("i");
+    servingIcon.setAttribute("class", "fa-solid fa-utensils");
+    servIconDiv.setAttribute("class", "position");
+    servIconDiv.appendChild(servingIcon);
+    var servingText = document.createElement("span");
+    servingText.textContent = " " + servingsPar;
+    servIconDiv.appendChild(servingText);
+  }
 }
