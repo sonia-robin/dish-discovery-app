@@ -17,13 +17,7 @@ body {
     background: #F6F6F6;
 }
 
-h1 {
-    color: F6F6F6;
-    align-items: center;
-    text-indent: -9999px;
-    background: url(images/dish-discovery-logo-no-bk-400.png) no-repeat;
-    width: 400px;
-    height: 250px;
+#main-logo {
     margin: 10px;
 }
 
