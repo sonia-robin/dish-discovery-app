@@ -121,6 +121,6 @@ document
     };
     fetchRecipeId(keyW, dietSlice, cuisineSlice, apiKey);
     displayYouTubeResults(keyW, dietSlice, cuisineSlice, apiKeyYT);
-    var closeBtn = document.querySelector(".btn-close").click();
+    document.querySelector(".btn-close").click();
   })
 });
