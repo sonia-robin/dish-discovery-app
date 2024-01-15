@@ -103,3 +103,5 @@ document
     // Call the function to display search results
     displaySearchResults();
   });
+   // Call the function to display search results after refresh
+  displaySearchResults();
