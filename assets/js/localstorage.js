@@ -74,15 +74,15 @@ function displaySearchResults() {
 
         // Create content for each saved recipe
         var modalContent =
-          "<button type='button'>" +
+          "<ul><button type='button' class ='key-btn'>" +
           keywordValue +
           "</button>" +
-          "<ul> <li>Dietary Restrictions: " +
+          "<li>Diet: " +
           dietaryValues.join(", ") +
           "</li>" +
           "<li>Cuisine: " +
           cuisineValues.join(", ") +
-          "</li> </ul>";
+          "</li> </ul><hr>";
 
         // Append the content to the modal body
         modalBody.innerHTML = modalBody.innerHTML + modalContent;
@@ -105,3 +105,22 @@ document
   });
    // Call the function to display search results after refresh
   displaySearchResults();
+
+// Event listener for all buttons generated in the modal to display recipes and YouTube results on the main page
+  document.querySelectorAll(".key-btn").forEach(function(btn){
+  btn.addEventListener("click", function(){
+    var keyW = this.innerHTML;
+    var diet = this.nextElementSibling.innerHTML;
+    var dietSlice = diet.slice(6);
+    if(dietSlice === "none"){
+      dietSlice = ""};
+    var cuisine = this.nextElementSibling.nextElementSibling.innerHTML;
+    var cuisineSlice = cuisine.slice(9);
+    if(cuisineSlice === "none"){
+      cuisineSlice = ""
+    };
+    fetchRecipeId(keyW, dietSlice, cuisineSlice, apiKey);
+    displayYouTubeResults(keyW, dietSlice, cuisineSlice, apiKeyYT);
+    var closeBtn = document.querySelector(".btn-close").click();
+  })
+});
