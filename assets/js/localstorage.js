@@ -8,18 +8,6 @@ var savedKeyword = localStorage.getItem("keyword");
 var savedDietary = JSON.parse(localStorage.getItem("dietary"));
 var savedCuisine = JSON.parse(localStorage.getItem("cuisine"));
 
-// Remember previous keyword input by setting its value
-keywordInput.value = savedKeyword;
-
-// Set value of checkboxes based on saved dietary and culinary preferences
-dietaryCheckboxes.forEach(function (checkbox) {
-  checkbox.checked = savedDietary && savedDietary.includes(checkbox.value);
-});
-
-cuisineCheckboxes.forEach(function (checkbox) {
-  checkbox.checked = savedCuisine && savedCuisine.includes(checkbox.value);
-});
-
 // Function to retrive all input and save to local storage
 function saveToLocalStorage() {
 
